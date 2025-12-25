@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GIỚI THIỆU BẢN THÂN - LÊ HOÀNG LƯƠNG</title>
+    <style>
+        /* Tông màu chủ đạo xanh sân cỏ */
+        body {
+            background-color: #2d5a27;
+            background-image: linear-gradient(90deg, #2d5a27 50%, #356a2e 50%);
+            background-size: 10% 100%; /* Hiệu ứng sọc cỏ dọc sân bóng */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        /* Hiệu ứng mưa bóng đá 2 bên */
+        .soccer-rain {
+            position: fixed;
+            top: -50px;
+            width: 20px;
+            height: 20px;
+            background: url('https://cdn-icons-png.flaticon.com/512/53/53283.png') no-repeat center;
+            background-size: contain;
+            z-index: 1000;
+            pointer-events: none;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            to { transform: translateY(110vh) rotate(360deg); }
+        }
+
+        /* ĐIỂM NHẤN ĐẦU WEB (BANNER) */
+        .hero-banner {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1574629810360-7efbbe195018?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            border-bottom: 5px solid #ffd700; /* Đường viền vàng huy chương */
+        }
+
+        .hero-banner h1 {
+            font-size: 45px;
+            margin: 0;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.8);
+            text-transform: uppercase;
+        }
+
+        /* MENU CÓ MÀU SẮC VÀ ĐIỂM NHẤN */
+        nav {
+            background: #ffffff;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            justify-content: center;
+            padding: 0;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        nav a {
+            text-decoration: none;
+            color: black;
+            font-size: 16px;
+            padding: 15px 20px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border-bottom: 3px solid transparent;
+        }
+
+        /* Hiệu ứng màu khi di chuột vào Menu */
+        nav a:hover {
+            background-color: #2d5a27;
+            color: #fff !important;
+            border-bottom: 3px solid #ffd700;
+        }
+
+        /* Container nội dung */
+        .container {
+            width: 75%;
+            margin: 30px auto;
+            background-color: rgba(255, 255, 255, 0.98);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 0 30px rgba(0,0,0,0.5);
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Typography */
+        .text-intro { font-size: 16px; color: #333; margin-bottom: 30px; text-align: center; }
+        .text-normal { font-size: 16px; color: black; line-height: 1.7; }
+        .text-italic { font-style: italic; }
+        .title-h1 { font-size: 26px; font-weight: bold; color: #1a3a16; border-left: 8px solid #2d5a27; padding-left: 15px; margin: 40px 0 20px 0; background: #f0f0f0; padding-top: 5px; padding-bottom: 5px; }
+        .title-h2 { font-size: 20px; font-weight: bold; color: #d63031; margin-top: 25px; }
+        .title-green { font-size: 16px; color: #1e4d2b; font-weight: bold; margin-top: 20px; display: block;}
+
+        /* Ảnh và Video */
+        img { max-width: 100%; border-radius: 10px; margin: 20px auto; display: block; border: 3px solid #eee; }
+        .caption { font-style: italic; font-size: 14px; text-align: center; color: #666; margin-bottom: 25px; }
+        
+        /* Dải ngăn cách khung thành */
+        .goal-divider {
+            width: 100%;
+            height: 120px;
+            background: url('https://img.freepik.com/premium-vector/soccer-goal-net-isolated-white-background_253396-368.jpg') repeat-x center;
+            background-size: contain;
+            margin: 50px 0;
+            opacity: 0.7;
+        }
+
+        hr { border: 0; border-top: 1px dashed #ccc; margin: 30px 0; }
+    </style>
+</head>
+<body>
+
+    <script>
+        function createBall() {
+            const ball = document.createElement('div');
+            ball.className = 'soccer-rain';
+            const side = Math.random() > 0.5 ? Math.random() * 12 : 88 + Math.random() * 10;
+            ball.style.left = side + 'vw';
+            ball.style.animationDuration = (Math.random() * 3 + 5) + 's';
+            ball.style.width = ball.style.height = (Math.random() * 15 + 10) + 'px'; // Bóng nhỏ
+            document.body.appendChild(ball);
+            setTimeout(() => ball.remove(), 8000);
+        }
+        setInterval(createBall, 1000);
+    </script>
+
+    <div class="hero-banner">
+        <h1>GIỚI THIỆU BẢN THÂN</h1>
+        <p style="font-size: 20px; color: #ffd700;">Lê Hoàng Lương | 12A4 | Đam mê bóng đá & Khoa học</p>
+    </div>
+
+    <nav>
+        <a href="#info">THÔNG TIN CƠ BẢN</a>
+        <a href="#hobbies">SỞ THÍCH</a>
+        <a href="#journey">HÀNH TRÌNH TRI THỨC</a>
+        <a href="#goals">MỤC TIÊU & ƯỚC MƠ</a>
+    </nav>
+
+    <div class="container">
+        <p class="text-intro">Xin chào, tôi là <b>Lê Hoàng Lương</b> - lớp 12A4! Sau đây tôi xin chân trọng giới thiệu bản thân!</p>
+
+        <section id="info">
+            <div class="title-h1">1. Thông tin cơ bản</div>
+            <div class="text-normal">
+                <p>👨‍🦳: Lê Hoàng Lương</p>
+                <p>📅: 7/3/2008</p>
+                <p>👩‍🎓: Học tập</p>
+                <p>🏫: THPT Hòn Gai</p>
+                <p>📍: Tổ 1A, Khu 7B, Phường Hạ Long, Thành phố Hạ Long, Quảng Ninh, Việt Nam</p>
+                <p>🌐: behoangluong08@gmail.com</p>
+                <p>🔢: 0363316916</p>
+                <p>👥: <a href="https://www.facebook.com/share/19BdqUkXBe/" target="_blank">Facebook cá nhân</a></p>
+                <p>⚽: Một bản nhạc hợp tâm trạng hay một khoảnh khắc sáng tạo</p>
+                <p class="text-italic">🥅: "Sống chậm lại, cười nhiều hơn."</p>
+            </div>
+        </section>
+
+        <div class="goal-divider"></div>
+
+        <section id="hobbies">
+            <div class="title-h1">2. Sở thích</div>
+            
+            <div class="title-h2">- Xem phim</div>
+            <div class="text-normal">
+                <p>Đối với nhiều người, cuối tuần là thời gian cho những chuyến đi hay những buổi tụ tập náo nhiệt. Nhưng với tôi, hạnh phúc gói gọn trong cụm từ "Netflix and chill". Đó là khoảnh khắc tôi tạm gác lại những ồn ào ngoài kia, trở về với căn phòng nhỏ thân thuộc. </p>
+                <p>Hãy tưởng tượng một tối thứ Bảy, ánh đèn phòng được tắt hẳn, chỉ còn lại ánh sáng xanh mờ ảo hắt ra từ màn hình. Tôi vùi mình trong lớp chăn ấm, nhâm nhi một chút bắp rang hay tách trà nóng, cảm nhận cái không gian tĩnh lặng tuyệt đối. Trong bóng tối ấy, thế giới của tôi không còn giới hạn bởi bốn bức tường, mà mở rộng ra qua những thước phim đầy kịch tính. </p>
+                <p>Thay vì những bộ phim tình cảm lãng mạn hay hành động sáo rỗng, tôi luôn bị mê hoặc bởi thể loại trinh thám và giải đố. Sức hút của dòng phim này không nằm ở những cú giật gân rẻ tiền, mà nằm ở sự thách thức trí tuệ. Mỗi chi tiết nhỏ, mỗi ánh mắt của nhân vật đều là một mảnh ghép trong một bức tranh khổng lồ. Cảm giác được cùng nhân vật chính lật tẩy những lời nói dối, "đấu trí" với hung thủ và vỡ òa khi sự thật phơi bày chính là thứ "chất gây nghiện" khiến tôi không thể rời mắt khỏi màn hình. </p>
+                <p>Nói đến trinh thám, không thể không nhắc đến "vị thần" trong lòng tôi: <b> Sherlock Holmes </b> (đặc biệt là phiên bản Sherlock của BBC). Đây không chỉ là một bộ phim, mà là một hành trình đi sâu vào bộ não thiên tài của một kẻ "phản xã hội cao cấp".</p>
+                
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS23l66Du5mWPfEs1CEDvK6V6AS301bH_tZow&s" alt="Sherlock">
+                
+                <p><b>•	Phần ấn tượng nhất:</b> Có lẽ là cảnh tượng Sherlock đứng giữa hiện trường vụ án, nơi thời gian như ngừng trôi. Trong khi mọi người chỉ thấy một xác chết bình thường, thì qua lăng kính của Sherlock, các dòng chữ dữ liệu hiện lên: từ vết bùn trên giày, độ mòn của khuy áo đến mùi nước hoa phảng phất.</p>
+                <p><b>•	Tại sao tôi lại ấn tượng?  </b> Bởi đó là sự tôn vinh tuyệt đối cho khả năng quan sát. Nó nhắc nhở tôi rằng: <i>"Chúng ta nhìn, nhưng chúng ta không quan sát".</i> Cách Holmes xâu chuỗi những điều vô nghĩa thành một sự thật hiển nhiên luôn khiến tôi nổi da gà vì sự sắc sảo và logic đến mức cực đoan. </p>
+                <img src="https://www.lemon8-app.com/seo/image?item_id=7494431807719375378&index=1&sign=ec64c5e074a2b7a466de253058457e37" alt="Observation">
+                <p>Dưới ánh sáng lờ mờ của căn phòng nhỏ, nhìn Sherlock giải mã những vụ án hóc búa nhất, tôi cảm thấy tâm trí mình như được khai mở, biến những giờ nghỉ ngơi cuối tuần trở thành một chuyến phiêu lưu trí tuệ đầy phấn khích.</p>
+                
+<iframe src="https://www.tiktok.com/embed/v2/7522707063286418705" 
+        style="width: 100%; height: 750px; border: none; border-radius: 12px;" 
+        allow="fullscreen">
+</iframe>
+            </div>
+
+            <hr>
+
+            <div class="title-h2">- Nằm nghe nhạc</div>
+            <div class="text-normal">
+                <p>Khi những âm thanh náo nhiệt của phố thị dần lùi xa và ánh đèn phòng được vặn nhỏ, đó là lúc tôi tìm về với khoảng không gian riêng tư nhất của mình. Sau một ngày dài đối mặt với những áp lực vô hình và guồng quay hối hả của công việc, tâm trí tôi thường trở nên quá tải. Trong khoảnh khắc ấy, tôi chọn cách buông bỏ mọi lo âu bằng một "liều thuốc" tinh thần kỳ diệu: <b>Âm nhạc.</b>.</p>
+                <p>Việc lắng nghe những giai điệu du dương trước khi ngủ không chỉ là thói quen, mà là cách tôi giải tỏa mọi căng thẳng, để mặc cho từng nốt nhạc vỗ về tâm hồn và đưa mình chìm sâu vào giấc ngủ một cách nhẹ nhàng nhất.</p>
+                <p>Dòng nhạc tôi luôn ưu tiên hàng đầu chính là Ballad – những bản nhạc mang âm hưởng chậm rãi, da diết và giàu tự sự. Trong playlist "gối đầu giường" của tôi, có hai ca khúc luôn được lặp lại nhiều nhất: <i>“Đường tôi chở em về” </i>và <i> “Ngày đẹp trời để nói chia tay”.</i> </p>
+                <p>Dù cùng thuộc dòng nhạc trữ tình, nhưng mỗi bài hát lại mang một sắc thái hoàn toàn khác biệt:</p>
+
+                <ul>
+                    <li><b>Đường tôi chở em về:</b> Mang màu sắc của sự trong trẻo, hoài niệm về một tình yêu ngây ngô, với những rung động nhẹ nhàng như làn gió mùa hạ.</li>
+<iframe src="https://www.tiktok.com/embed/v2/7247857836200447238" 
+        style="width: 100%; height: 750px; border: none; border-radius: 12px;" 
+        allow="fullscreen">
+</iframe>
+                    <li><b>Ngày đẹp trời để nói chia tay:</b> Lại là nốt trầm buồn của sự tan vỡ, một sự chấp nhận đau đớn nhưng đầy thanh thản khi tình yêu đi đến hồi kết.</li>
+<iframe src="https://www.tiktok.com/embed/v2/7380390659099757832" 
+        style="width: 100%; height: 750px; border: none; border-radius: 12px;" 
+        allow="fullscreen">
+</iframe>
+                </ul>
+                <p>Dù một bên là khởi đầu ngọt ngào, một bên là kết thúc buồn bã, nhưng cả hai đều có điểm chung là cách người nghệ sĩ sử dụng ngôn từ để phác họa tình yêu quá đỗi chân thực. Cách họ trau chuốt từng câu hát, từng hơi thở trong giai điệu đã chạm đến những góc khuất sâu nhất trong trái tim tôi. Nghe họ hát, tôi như thấy chính câu chuyện của mình trong đó, cảm thấy được thấu hiểu và sẻ chia.
+Những giai điệu ấy không chỉ là âm thanh, mà là những lời tự tình, giúp tôi khép lại một ngày cũ bằng sự bình yên và đón chờ một giấc mơ dịu dàng. </p>
+            </div>
+
+            <hr>
+
+            <div class="title-h2">- Đá bóng</div>
+            <div class="text-normal">
+                <p>Nếu có ai hỏi về người bạn "tri kỷ" nhất của tôi, câu trả lời chắc chắn sẽ là trái bóng tròn. Niềm đam mê ấy không phải là một sự tình cờ, mà nó đã bắt đầu nhen nhóm từ khi tôi mới chỉ là một cậu nhóc 5 tuổi. Ngày ấy, chỉ cần nghe tiếng gọi í ới của đám bạn hàng xóm, tôi đã ngay lập tức xỏ đôi dép lê chạy ra bãi đất trống. Trong mắt đám con nít thời đó, tôi cũng có chút "số má" vì kỹ thuật lắt léo và khả năng ghi bàn nhạy bén, cái cảm giác được làm "ngôi sao" giữa sân bóng làng thực sự rất oách và hãnh diện.</p>
+                <img src="https://phunuvietnam.mediacdn.vn/179072216278405120/2022/11/9/anh-11-16679552827301143785164.jpg" alt="Bóng đá">
+                <p class="caption"><i>Hình ảnh chỉ mang tính minh họa</i></p>
+
+                <p>Thời gian trôi qua, niềm đam mê ấy không hề hạ nhiệt mà chỉ chuyển từ những bãi đất trống sang những sân cỏ nhân tạo chuyên nghiệp hơn. Bây giờ, dù bận rộn, tôi vẫn luôn dành thời gian để ra sân cùng bạn bè, đàn anh hay những đứa em khóa dưới. Trên sân cỏ, mọi khoảng cách về tuổi tác hay công việc đều bị xóa nhòa, chỉ còn lại sự phối hợp ăn ý và khát khao chiến thắng.</p>
+                <p>Kỷ niệm khiến tôi nhớ mãi chính là trận đối đầu căng thẳng với lớp khác trong một giải đấu phong trào gần đây. Đó không đơn thuần là một trận bóng, mà là một cuộc đấu trí và đấu lực thực sự. Hai đội giằng co nhau từng mét cỏ, những pha va chạm nảy lửa và những giọt mồ hôi ướt đẫm áo đấu dưới cái nắng gay gắt. </p>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_JMWlz1gioxfdITE9TaGBiN2OkVGWI44YkQ&s" alt="Căng thẳng">
+                <p>Khi tiếng còi mãn cuộc đanh gọn vang lên, ấn định chiến thắng tối thiểu nhưng đầy quý giá cho đội nhà, lồng ngực tôi như muốn nổ tung vì một thứ cảm xúc khó tả thành lời. Đó trước hết là sự nhẹ nhõm đến tận cùng, khi mọi áp lực đè nặng trong từng phút giây nghẹt thở trên sân cuối cùng cũng được tháo bỏ. Nhìn những gương mặt ướt đẫm mồ hôi nhưng rạng rỡ nụ cười của đồng đội, lòng tôi dâng lên một niềm tự hào khó tả; tự hào vì mọi nỗ lực không ngừng nghỉ, từ những pha tranh chấp quyết liệt đến những bước chạy quên mình của cả tập thể, đã được đền đáp xứng đáng. Trong khoảnh khắc ấy, chúng tôi chẳng ai bảo ai, cùng lao vào ôm chầm lấy nhau, vỡ òa trong niềm hạnh phúc thuần khiết và ăn mừng như những nhà vô địch thực thụ của chính cuộc đời mình.</p>
+                <img src="https://media.anhp.vn/thumb_x500x263/files/2025/03/16/be-mac1742104843.JPG" alt="Chiến thắng">
+                <p class="caption"><i>Hình ảnh chỉ mang tính minh họa</i></p>
+                <p> Cảm giác chiến thắng ấy, cộng với niềm vui thuần khiết mỗi khi được chạm bóng, khiến tôi nhận ra rằng đá bóng đã trở thành một phần máu thịt của mình. Có lẽ, dù sau này bao nhiêu tuổi đi chăng nữa, đôi chân này vẫn sẽ tiếp tục chạy, con tim này vẫn sẽ đập loạn nhịp theo từng đường bóng, và tôi sẽ còn gắn bó với môn thể thao vua này một hành trình rất dài phía trước</p>
+                
+            </div>
+        </section>
+
+        <div class="goal-divider"></div>
+
+        <section id="journey">
+            <div class="title-h1">3. Hành trình tri thức và tư duy</div>
+            <span class="title-green">● Nền tảng học tập:</span>
+            <p class="text-normal">Nền tảng tư duy của tôi được bồi đắp từ sự logic của Toán học, tính thực tiễn của Vật lý và sự biến hóa của Hóa học. Những con số và định luật không chỉ là kiến thức trên trang giấy, mà là công cụ để tôi khám phá thế giới. Hiện tại, tôi đang dồn hết tâm huyết với tư cách là một thành viên của đội tuyển học sinh giỏi Vật lý, nơi tôi được rèn luyện cách nhìn nhận mọi vấn đề qua lăng kính khoa học và chiều sâu của sự phân tích. </p>
+
+            <span class="title-green">● Quyết định khó khăn (Đội tuyển vs IELTS):</span>
+            <p class="text-normal">Thử thách lớn nhất mà tôi từng đối mặt chính là việc phải đặt lên bàn cân giữa hai con đường quan trọng: một bên là niềm đam mê chinh phục những đỉnh cao tri thức trong đội tuyển Vật lý, một bên là nhu cầu tất yếu về chứng chỉ IELTS để mở cửa ra thế giới. Đó không chỉ là sự lựa chọn giữa các môn học, mà là cuộc đấu tranh để tìm kiếm sự ưu tiên đúng đắn nhất cho nguồn lực và thời gian của bản thân trong giai đoạn nước rút này. Tuy nhiên, tôi đã quyết định để IELTs cho những năm tháng đại học tiếp theo và tập trung vào đội tuyển. Thật bất ngờ là sự nỗ lực của tôi đã có quả ngọt <b> giải ba Vật Lý tỉnh </b> </p>
+
+            <span class="title-green">● Lộ trình Đại học:</span>
+            <p class="text-normal">Xác định mục tiêu -> Phân bổ thời gian (lớp 12 là giai đoạn nước rút) -> Tối ưu phong độ thi đấu.</p>
+
+            <span class="title-green">● Định hướng cống hiến:</span>
+            <p class="text-normal">Để vẹn cả đôi đường giữa sự nghiệp thăng hoa và hơi ấm gia đình, tâm nguyện của tôi là được cống hiến chuyên môn tại các thành phố lớn hoặc những khu kinh tế trọng điểm gần quê hương. Đó là nơi tôi có thể tiếp cận với những cơ hội nghề nghiệp hiện đại, làm chủ công nghệ nhưng vẫn có thể thường xuyên trở về, chăm sóc và gắn bó với nguồn cội của mình.</p>
+        </section>
+
+        <div class="goal-divider"></div>
+
+        <section id="goals">
+            <div class="title-h1">4. Mục tiêu và ước mơ</div>
+            <div class="title-h2">📍 Mục tiêu ngắn hạn (2025 - 2026)</div>
+            <p class="text-normal">Chính là chinh phục thành công cánh cửa trường Đại học mà mình hằng mơ ước. Đó không chỉ là một đích đến, mà là bước đệm đầu tiên để tôi hiện thực hóa những hoài bão lớn lao hơn trong tương lai.</p>
+
+            <div class="title-h2">🚀 Tầm nhìn sự nghiệp</div>
+            <p class="text-normal">•	Về tầm nhìn dài hạn, tôi khao khát trở thành một chuyên gia đầu ngành trong lĩnh vực mình đã chọn. Tại đó, tôi không chỉ dừng lại ở việc làm chủ công nghệ hiện đại mà còn vận dụng tư duy quản lý nhạy bén để tạo ra những giá trị thực chất, góp phần giải quyết các vấn đề và mang lại lợi ích cho cộng đồng</p>
+
+            <div class="title-h2">✨ Châm ngôn theo đuổi</div>
+            <p class="text-normal text-italic" style="text-align: center; font-size: 18px; margin-top: 20px;">
+                "Học để biết, học để làm, học để chung sống, học để tự khẳng định mình."
+            </p>
+        </section>
+    </div>
+
+    <footer style="text-align: center; padding: 20px; color: white; font-size: 14px;">
+        © 2025 Lê Hoàng Lương - Thiết kế bởi AI Assistant
+    </footer>
+</body>
+</html>
